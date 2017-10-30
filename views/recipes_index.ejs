@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+           <% if (!user) { %>
+              <p>Current User: Anonymous</p>
+             <% } else { %>
+              <h2>Cooking<h2>
+              <% } %>
+               <% if (!filelist) { %>
+                   <p>No files returned</p>
+               <% } else { %>
+			   <div class="boxed">
+                <ul class="resource_index">
+                <% for (var c=0; c<filelist.length; c++) { %> 
+				
+                <% if (filelist[c] != ".gitignore") { %>
+				  <li><a href = ' ./../resources/recipes/<%= filelist[c]  %> '>  <%= filelist[c]  %>  </a> <% } %>  </li>
+                    <% } %>
+                 </ul>
+                <% } %> 
+               </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include partials/footer %>
+    </footer>
+    
+</body>
+</html>

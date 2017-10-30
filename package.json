@@ -1,0 +1,25 @@
+{
+  "name": "passport_mysql_express_auth",
+  "description": "ExpressJs + Passport.js + MySQL Authentication",
+  "version": "1.0.0",
+  "author": "Unknown + Gavin",
+  "licence": "ISC",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "*",
+    "body-parser": "*",
+    "bookshelf": "*",
+    "cookie-parser": "*",
+    "ejs": "*",
+    "express": "4.x",
+    "express-session": "*",
+    "mysql": "*",
+    "node-file-walker": "0.0.1",
+    "passport": "*",
+    "passport-local": "*",
+    "serve-favicon": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

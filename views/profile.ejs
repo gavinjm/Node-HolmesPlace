@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+      <p>
+        User ID: <%= user.id %><br/>
+        Username: <%= user.username %><br/>
+        Name: <%= user.name %> <%= user.surname %><br/>
+        <% if (user.email) { %>
+            Email: <%= user.email %><br/>
+            <% } %>
+       </p>  
+        </div>
+    </main>
+
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 

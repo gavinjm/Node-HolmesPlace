@@ -1,0 +1,2 @@
+C:\NodeProjects\passport_mysql_express_auth-master\obj\Debug\NodejsApp1.njsprojResolveAssemblyReference.cache
+C:\NodeProjects\passport_mysql_express_auth-master\bin\Microsoft.NodejsTools.WebRole.dll

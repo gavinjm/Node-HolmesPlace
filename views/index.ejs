@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main>
+	
+        <div class="jumbotron">
+		<div id="RightFloatAds"> your ads code here </div>
+             <% if (!user) { %>
+	      <p>Welcome! Please log in to access Private areas.</a>.</p>
+            
+             <% } else { %>
+	       <p>Hello, <%= user.username %>. View your <a href="/profile">profile</a>.</p>
+             <script src="http://www.yr.no/place/South_Africa/KwaZulu-Natal/Port_Shepstone/external_box_hour_by_hour.js"></script>
+             <noscript>     
+             <a href="http://www.yr.no/place/South_Africa/KwaZulu-Natal/Port_Shepstone/">yr.no: Forecast for Port Shepstone</a>
+               </noscript>
+             <% } %>
+        
+        </div>
+		
+    </main>
+
+    <footer>
+        <% include partials/footer %>
+    </footer>
+    
+</body>
+</html>

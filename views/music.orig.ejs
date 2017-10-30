@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+
+    <main>
+        <div class="jumbotron">
+             <% if (!user) { %>
+	       <p>Welcome! To the <h2>music page</h2></p>
+               <p>Current User: Anonymous</p>
+             <% } else { %>
+                <p>Welcome! To the <h2>Music Page<h2></p>
+                <p>Current User: <%= user.username  %></p>
+                <p> List of Files in Music Directory</p>
+                
+              <% } %>
+               <% if (!filelist) { %>
+                   <p>No files returned</p>
+               <% } else { %>
+                <ul>
+                <% for (var c=0; c<filelist.length; c++) { %>
+                <li><%= filelist[c] %></li>
+                    <% } %>
+                 </ul>
+                <% } %> 
+
+             
+        
+        </div>
+    </main>
+
+    <footer>
+        <% include partials/footer %>
+    </footer>
+    
+</body>
+</html>

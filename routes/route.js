@@ -1,11 +1,11 @@
 // vendor library
 var passport = require('passport');
 var bcrypt = require('bcrypt-nodejs');
- console.log('route.js Stub:4)....');
+// console.log('route.js Stub:4)....');
 // custom library
 // model
 var Model = require('../models/model');
- console.log('route.js Stub:8)....');
+// console.log('route.js Stub:8)....');
 //
 // index
 var index = function(req, res, next) {
@@ -30,6 +30,7 @@ var index = function(req, res, next) {
          user = user.toJSON();
       }
     items = walksync(path, items);
+	// Remove files from the array
      // display E-Books with libnks to open them
      res.render('ebooks_index', {title: 'E-Books',user: user, filelist: items});
 	   }
@@ -56,7 +57,7 @@ var index = function(req, res, next) {
   var items = [];			// Empty array
   var path = "resources/sheetmusic";	// Path to sheetmusic
   var user = "default";
-  console.log("route.js: 25 -> Web Site Root directory: " + __dirname);
+//  console.log("route.js: 25 -> Web Site Root directory: " + __dirname);
   
    if (!req.isAuthenticated()){
          res.redirect('/signin');
@@ -95,6 +96,7 @@ var musicindex = function(req, res, next){
 };
 
 // Reads files in the music dir recursivley in a synchronous fashion
+// No filtering is done on files, this is so the function can be used for all file types.
 var walksync = function(dir, filelist){
     var fs = fs ||  require('fs'),
       files = fs.readdirSync(dir);

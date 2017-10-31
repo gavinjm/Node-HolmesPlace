@@ -14,13 +14,13 @@
            <% if (!user) { %>
               <p>Current User: Anonymous</p>
              <% } else { %>
-              <h2>Cooking<h2>
+              <h2 class="recipe_font">Recipes<h2>
               <% } %>
                <% if (!filelist) { %>
                    <p>No files returned</p>
                <% } else { %>
 			   <div class="boxed">
-                <ul class="resource_index">
+                <ul class="recipe_font">
                 <% for (var c=0; c<filelist.length; c++) { %> 
 				
                 <% if (filelist[c] != ".gitignore") { %>

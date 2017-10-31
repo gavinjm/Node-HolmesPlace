@@ -1,17 +1,18 @@
  body    { padding-top:50px; }
  .resource_index {
-	font-family: sans-serif;
-	font-style: normal;
-	font-variant: small-caps;
-	font-weight: normal;
-	font-size: smaller;
-	line-height: 100%;
-	word-spacing: normal;
-	letter-spacing: normal;
-	text-decoration: none;
-	text-transform: none;
-	text-align: left;
-	text-indent: 0ex;
+	font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+ }
+ .recipe_font {
+ font-family: 'Indie Flower', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+ }
+ .ebooks_font{
+ font-family: 'Amatic+SC',serif;
+ font-size: 20px;
+ text-shadow: 2px 2px 2px #aaa;
  }
  p.body {
 	font-family: Arial, Helvetica, sans-serif;

@@ -1,10 +1,4 @@
-console.log('db.js Stub:12)...');
 
-// var Bookshelf = require('bookshelf')('knex')({client: 'mysql'});
-
-//console.log('db.js Stub:16) Init var Bookshelf');
-
-//module.exports.DB = Bookshelf;
 var Bookshelf = require('bookshelf');
 
 var config = {

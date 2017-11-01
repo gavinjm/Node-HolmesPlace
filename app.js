@@ -81,26 +81,32 @@ app.get('/home', route.index);
 app.get('/index', route.index);
 // signin - GET
 app.get('/signin', route.signIn);
+
 // signin - POST
 app.post('/signin', route.signInPost);
+
 // signup - GET
 app.get('/signup', route.signUp);
+
 // signup - POST
 app.post('/signup', route.signUpPost);
 // logout - GET
 app.get('/signout', route.signOut);
+
 // profile - GET
 app.get('/profile', route.profile);
 
 //******** Holmes Place Routes ********/
 //Weather - GET
 app.get('/weather', route.weather);
+
 //Accounting App - GET
 app.get('/accounts', route.accounts);
+
 //PHPMyAdmin - GET
 app.get('/phpmyadmin', route.phpmyadmin);
 
-//Local Routes
+//********* Local Routes ************/
 //Fishing Lures - Get
 app.get('/fishinglures', route.fishinglures);
 //Music - Get
@@ -111,6 +117,9 @@ app.get('/ebooks', route.ebooksindex);
 app.get('/sheetmusic', route.sheetmusicindex);
 // Recipes - Get
 app.get('/recipes', route.recipesindex);
+// note - GET
+app.get('/note', route.addNote);
+//app.get('note', route.addNotePost);
 
 /********************************/
 

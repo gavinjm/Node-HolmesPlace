@@ -111,6 +111,18 @@ var walksync = function(dir, filelist){
   return filelist;     
 };
 
+// addNote - GET
+var addNote = function(req, res, next){
+if(!req.isAuthenticated()) res.redirect('/signin');
+ res.render('addNote', {title: 'New Note'});
+
+};
+var addNotePost = function(req, res, next){
+
+if(!req.isAuthenticated()) res.redirect('/signin');
+ res.render('addNote', {title: 'New Note'});
+
+};
 // sign in - GET
 var signIn = function(req, res, next) {
    if(req.isAuthenticated()) res.redirect('/');
@@ -255,6 +267,7 @@ module.exports.musicindex = musicindex;
 module.exports.ebooksindex = ebooksindex;
 module.exports.sheetmusicindex = sheetmusicindex;
 module.exports.recipesindex = recipesindex;
+module.exports.addNote = addNote;
 
 // Profile
 module.exports.profile = profile;
@@ -264,7 +277,7 @@ module.exports.weather = weather;
 module.exports.accounts = accounts;
 module.exports.phpmyadmin = phpmyadmin;
 
-// sigin in
+// signin in
 // GET
 module.exports.signIn = signIn;
 // POST

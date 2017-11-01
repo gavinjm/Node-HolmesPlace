@@ -13,13 +13,10 @@
          <h2>Sign In Form</h2>
       <form method="post" action="/signin">
 		 
-         <% if(typeof(errorMessage) !== 'undefined') {%>
-            <span><%= errorMessage %></span>
-         <% } %>
-         <p>
+           <p>
             <label for="username">username</label>
             <input type="text" name="username" id="username"
-               placeholder="username" required="true"/>
+             placeholder="username" required="true"/>
          </p>
          <p>
             <label for="password">password</label>

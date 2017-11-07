@@ -79,17 +79,19 @@ app.use(passport.session());
 app.get('/', route.index);
 app.get('/home', route.index);
 app.get('/index', route.index);
+
 // signin - GET
 app.get('/signin', route.signIn);
-
 // signin - POST
 app.post('/signin', route.signInPost);
 
+
+
 // signup - GET
 app.get('/signup', route.signUp);
-
 // signup - POST
 app.post('/signup', route.signUpPost);
+
 // logout - GET
 app.get('/signout', route.signOut);
 
@@ -117,9 +119,11 @@ app.get('/ebooks', route.ebooksindex);
 app.get('/sheetmusic', route.sheetmusicindex);
 // Recipes - Get
 app.get('/recipes', route.recipesindex);
+
 // note - GET
 app.get('/note', route.addNote);
-//app.get('note', route.addNotePost);
+// note - POST
+app.post('/note', route.addNotePost);
 
 /********************************/
 

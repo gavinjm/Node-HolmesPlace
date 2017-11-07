@@ -4,10 +4,10 @@ use Holmes_Place;
 drop table if exists tblBlog;
 
 create table if not exists tblBlog(
-   blogId integer primary key auto_increment,
-   blogDate datetime,
-   blogger varchar(100) unique,
-   topic varchar(100),
-   blog_type varchar(100),
-   content varchar(100)
+   blId integer primary key auto_increment,
+   blDate datetime,
+   blUser varchar(100) unique,
+   blTopic varchar(100),
+   blType varchar(100),
+   blContent varchar(100)
 )engine=innodb;

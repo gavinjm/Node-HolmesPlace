@@ -114,13 +114,21 @@ var walksync = function(dir, filelist){
 // addNote - GET
 var addNote = function(req, res, next){
 if(!req.isAuthenticated()) res.redirect('/signin');
- res.render('addNote', {title: 'New Note'});
+ // Send across the date timestamp for the note as well as the username
+ var user = req.user;
+     if(user !== undefined) {
+         user = user.toJSON();
+      } else { user = "not defined" }  
+ var notetime = new Date().toISOString().
+  replace(/T/, ' ').      // replace T with a space
+  replace(/\..+/, '')     // delete the dot and everything after
+  
+ res.render('addNote', {title: 'New Note', user: user, notetime: notetime });
 
 };
-var addNotePost = function(req, res, next){
 
-if(!req.isAuthenticated()) res.redirect('/signin');
- res.render('addNote', {title: 'New Note'});
+var addNotePost = function(req, res, next){
+ res.render('showNote', {title: '.....Details of new note'});
 
 };
 // sign in - GET
@@ -268,6 +276,7 @@ module.exports.ebooksindex = ebooksindex;
 module.exports.sheetmusicindex = sheetmusicindex;
 module.exports.recipesindex = recipesindex;
 module.exports.addNote = addNote;
+module.exports.addNotePost = addNotePost;
 
 // Profile
 module.exports.profile = profile;

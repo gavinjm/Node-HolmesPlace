@@ -13,12 +13,12 @@ var LocalStrategy = require('passport-local').Strategy;
 // custom libraries
 // routes
 var route = require('./routes/route');
-
+var note = require('./routes/note');
 // model
 var Model = require('./models/model');
-
-  
+ 
 var app = express();
+var expressValidator = require('express-validator');
 
 
 passport.use(new LocalStrategy(function(username, password, done) {
@@ -70,9 +70,19 @@ global.appRoot = path.resolve(__dirname);
 app.use(favicon(__dirname + '/views/icons/dachshund.ico'));
 app.use(cookieParser());
 app.use(bodyParser());
+//support parsing of application/json type post data
+app.use(bodyParser.json());
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressValidator())
 app.use(session({secret: 'secret strategic xxzzz code'}));
 app.use(passport.initialize());
 app.use(passport.session());
+////////////////	Controllers		///////////////////////
+//////////// Load the Controllers (aka routes) ///////////////
+// the file /contrllindex.js 
+//Moreover, it is an index file, so you don’t need to provide its name when requiring it, you only need the folder name.
+// app.use(require('./controllers'))
 
 ///////////// routes ///////////////
 // GET default, home and index routes
@@ -120,10 +130,11 @@ app.get('/sheetmusic', route.sheetmusicindex);
 // Recipes - Get
 app.get('/recipes', route.recipesindex);
 
+//******************* NOTES ******************//
 // note - GET
-app.get('/note', route.addNote);
+app.get('/note', note.addNote);
 // note - POST
-app.post('/note', route.addNotePost);
+app.post('/note',note.addNotePost);
 
 /********************************/
 

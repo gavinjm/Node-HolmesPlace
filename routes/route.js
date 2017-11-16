@@ -1,11 +1,9 @@
 // vendor library
 var passport = require('passport');
 var bcrypt = require('bcrypt-nodejs');
-// console.log('route.js Stub:4)....');
-// custom library
 // model
 var Model = require('../models/model');
-// console.log('route.js Stub:8)....');
+
 //
 // index
 var index = function(req, res, next) {
@@ -78,8 +76,7 @@ var musicindex = function(req, res, next){
    var path = "resources/music";     	// Path to the music files
    var user = "default";
    //var path = "C:\\Users\\Gavin\\Documents\\Sheet Music";
-   
-//Extract file extension for icon displays
+   //Extract file extension for icon displays
 
    if (!req.isAuthenticated()){
          res.redirect('/signin');
@@ -111,26 +108,6 @@ var walksync = function(dir, filelist){
   return filelist;     
 };
 
-// addNote - GET
-var addNote = function(req, res, next){
-if(!req.isAuthenticated()) res.redirect('/signin');
- // Send across the date timestamp for the note as well as the username
- var user = req.user;
-     if(user !== undefined) {
-         user = user.toJSON();
-      } else { user = "not defined" }  
- var notetime = new Date().toISOString().
-  replace(/T/, ' ').      // replace T with a space
-  replace(/\..+/, '')     // delete the dot and everything after
-  
- res.render('addNote', {title: 'New Note', user: user, notetime: notetime });
-
-};
-
-var addNotePost = function(req, res, next){
- res.render('showNote', {title: '.....Details of new note'});
-
-};
 // sign in - GET
 var signIn = function(req, res, next) {
    if(req.isAuthenticated()) res.redirect('/');
@@ -158,7 +135,7 @@ var signInPost = function(req, res, next) {
             return res.render('signin', {title: 'Sign In', errorMessage: err.message});
          } else {
 			 console.log('Authentication success for : User : ' + user.username +  '  Password: ' + user.password);
-            return res.redirect('/');
+			 return res.redirect('/');
          }
       });
    })(req, res, next);
@@ -275,8 +252,7 @@ module.exports.musicindex = musicindex;
 module.exports.ebooksindex = ebooksindex;
 module.exports.sheetmusicindex = sheetmusicindex;
 module.exports.recipesindex = recipesindex;
-module.exports.addNote = addNote;
-module.exports.addNotePost = addNotePost;
+
 
 // Profile
 module.exports.profile = profile;
